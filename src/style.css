@@ -96,5 +96,5 @@ li {
 }
 .link-github {
   max-width: 620px;
-  margin-top: 5px;
+  margin: 5px auto;
 }
