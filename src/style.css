@@ -1,0 +1,95 @@
+body {
+  color: #5a6275;
+}
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+p {
+  text-align: center;
+  font-size: small;
+  margin-bottom: 30px;
+}
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  padding-top: 40px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  font-size: 15px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+
+  list-style: none;
+}
+.weather-app {
+  border: 1px solid #5a6275;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 620px;
+}
+.temp {
+  color: black;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1;
+}
+.weather-icon {
+  margin: 0;
+}
+.units {
+  position: relative;
+  top: -30px;
+}
+.col-2 {
+  margin: 0px;
+  text-align: center;
+}
+.weather-forecast {
+  margin-top: 40px;
+}
+.fa-solid {
+  border: 1px solid grey;
+  border-radius: 50px;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.fa-location-dot {
+  font-size: 20px;
+  color: rgb(3, 208, 3);
+  border: 0px;
+  margin-bottom: 3px;
+}
+.fa-droplet {
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.description {
+  margin-top: 10px;
+}
+.forecast-icon {
+  padding: 7px;
+}
+.forecast-temp-min {
+  color: #c6c8cf;
+}
+.forecast-temp-max {
+  background-color: #e6e8ec;
+}
+.weather-data {
+  padding-left: 60px;
+}
+.btn {
+  position: relative;
+  top: -3px;
+  line-height: 1;
+  border-radius: 3px;
+}
