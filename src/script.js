@@ -32,7 +32,7 @@ function displayWeaterCondition(response) {
     response.data.main.feels_like
   );
   document.querySelector(".weatherDescription").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector(".tempMax").innerHTML = Math.round(
     response.data.main.temp_max
   );
