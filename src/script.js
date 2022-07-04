@@ -10,13 +10,24 @@ let days = [
 ];
 let day = days[curentTime.getDay()];
 let curentDay = document.querySelector(".curentDay");
-let hour = curentTime.getHours();
-let min = curentTime.getUTCMinutes();
 curentDay.innerHTML = `${day}`;
-let curentHour = document.querySelector(".curentHour");
-curentHour.innerHTML = `${hour}`;
-let curentMin = document.querySelector(".curentMin");
-curentMin.innerHTML = `${min}`;
+
+function formatDate(timestamp) {
+  let curentTime = new Date(timestamp);
+  let hour = curentTime.getHours();
+  let min = curentTime.getUTCMinutes();
+
+  return `${day} ${hour}:${min}`;
+}
+//
+//let hour = curentTime.getHours();
+//
+
+//
+//let curentHour = document.querySelector(".curentHour");
+//curentHour.innerHTML = `${hour}`;
+//let curentMin = document.querySelector(".curentMin");
+//curentMin.innerHTML = `${min}`;
 
 function displayWeaterCondition(response) {
   console.log(response.data);
