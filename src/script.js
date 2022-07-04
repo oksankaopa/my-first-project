@@ -43,6 +43,12 @@ function displayWeaterCondition(response) {
   document.querySelector(".tempMin").innerHTML = Math.round(
     response.data.main.temp_min
   );
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatDate(response.data.dt * 1000);
 }
