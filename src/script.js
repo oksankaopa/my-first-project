@@ -13,21 +13,14 @@ let curentDay = document.querySelector(".curentDay");
 curentDay.innerHTML = `${day}`;
 
 function formatDate(timestamp) {
-  let curentTime = new Date(timestamp);
-  let hour = curentTime.getHours();
-  let min = curentTime.getUTCMinutes();
-
-  return `${day} ${hour}:${min}`;
+  let time = new Date(timestamp);
+  let hour = time.getHours();
+  let min = time.getUTCMinutes();
+  if (min < 10) {
+    min = `0${min}`;
+  }
+  return `${hour}:${min}`;
 }
-//
-//let hour = curentTime.getHours();
-//
-
-//
-//let curentHour = document.querySelector(".curentHour");
-//curentHour.innerHTML = `${hour}`;
-//let curentMin = document.querySelector(".curentMin");
-//curentMin.innerHTML = `${min}`;
 
 function displayWeaterCondition(response) {
   console.log(response.data);
@@ -50,6 +43,8 @@ function displayWeaterCondition(response) {
   document.querySelector(".tempMin").innerHTML = Math.round(
     response.data.main.temp_min
   );
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function searchCity(cityName) {
   let apiKey = "1fe44f0a5a94113867612fe7492577ab";
