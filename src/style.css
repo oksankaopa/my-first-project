@@ -44,6 +44,14 @@ li::first-letter {
   max-width: 620px;
   margin-bottom: 5px;
 }
+.active {
+  color: #5a6275;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
 .temp {
   color: black;
   font-size: 60px;
