@@ -25,9 +25,8 @@ function formatDate(timestamp) {
 function displayWeaterCondition(response) {
   console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector(".temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemp = response.data.main.temp;
+  document.querySelector(".temp").innerHTML = Math.round(celsiusTemp);
   document.querySelector(".humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
@@ -77,8 +76,9 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 function convert(event) {
   event.preventDefault();
+  let farTemp = (celsiusTemp * 9) / 5 + 32;
   let convertTemp = document.querySelector(".temp");
-  convertTemp.innerHTML = "66";
+  convertTemp.innerHTML = Math.round(farTemp);
 }
 let convertFar = document.querySelector("#fahrenheit");
 convertFar.addEventListener("click", convert);
@@ -86,7 +86,7 @@ convertFar.addEventListener("click", convert);
 function convert2(event) {
   event.preventDefault();
   let convertTemp2 = document.querySelector(".temp");
-  convertTemp2.innerHTML = "19";
+  convertTemp2.innerHTML = Math.round(celsiusTemp);
 }
 let convertCel = document.querySelector("#celsius");
 convertCel.addEventListener("click", convert2);
@@ -94,3 +94,4 @@ convertCel.addEventListener("click", convert2);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("Kyiv");
+let celsiusTemp = null;
