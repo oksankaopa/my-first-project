@@ -114,5 +114,7 @@ li::first-letter {
 }
 .link-github {
   max-width: 620px;
-  margin: 5px auto;
+  margin: 20px auto;
+  text-align: right;
+  color: black;
 }
