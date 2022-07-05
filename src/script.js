@@ -25,10 +25,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecstHTML = `<div class="row">`;
   let forecastDays = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  forecast.forEach(function (forecastDay) {
-    forecstHTML =
-      forecstHTML +
-      `<div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecstHTML =
+        forecstHTML +
+        `<div class="col-2">
       <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
             <img
             src="http://openweathermap.org/img/wn/${
@@ -46,6 +47,7 @@ function displayForecast(response) {
               )}°</span>
       </div>
     </div>`;
+    }
   });
 
   forecstHTML = forecstHTML + `</div>`;
