@@ -12,6 +12,25 @@ let day = days[curentTime.getDay()];
 let curentDay = document.querySelector(".curentDay");
 curentDay.innerHTML = `${day}`;
 
+function displayForecast() {
+  let forecastElemetn = document.querySelector("#forecast");
+  forecastElemetn.innerHTML = `<div class="row">
+          <div class="col-2">
+            <div class="forecast-day">Wed</div>
+            <img
+            src="https://ssl.gstatic.com/onebox/weather/32/partly_cloudy.png"
+            alt="cloud icon"
+            class="forecast-icon"
+            />
+             <div class="forecast-temp">
+              <span class="forecast-temp-max">26°</span>
+              <span class="forecast-temp-min">18°</span>
+            </div>
+          </div>
+         
+        </div>
+      </div>`;
+}
 function formatDate(timestamp) {
   let time = new Date(timestamp);
   let hour = time.getHours();
@@ -95,3 +114,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("Kyiv");
 let celsiusTemp = null;
+displayForecast();
