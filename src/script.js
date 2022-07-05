@@ -12,6 +12,14 @@ let day = days[curentTime.getDay()];
 let curentDay = document.querySelector(".curentDay");
 curentDay.innerHTML = `${day}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -21,9 +29,11 @@ function displayForecast(response) {
     forecstHTML =
       forecstHTML +
       `<div class="col-2">
-      <div class="forecast-day">${forecastDay.dt}</div>
+      <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
             <img
-            src="https://ssl.gstatic.com/onebox/weather/32/partly_cloudy.png"
+            src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
             alt="cloud icon"
             class="forecast-icon"
             />

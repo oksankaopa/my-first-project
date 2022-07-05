@@ -93,6 +93,7 @@ li::first-letter {
 }
 .forecast-icon {
   padding: 7px;
+  width: 50px;
 }
 .forecast-temp-min {
   color: #c6c8cf;
