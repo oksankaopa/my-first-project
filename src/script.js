@@ -67,7 +67,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 function displayWeaterCondition(response) {
-  console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
   document.querySelector(".temp").innerHTML = Math.round(celsiusTemp);
@@ -119,22 +118,6 @@ function getCurrentLocation(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-function convert(event) {
-  event.preventDefault();
-  let farTemp = (celsiusTemp * 9) / 5 + 32;
-  let convertTemp = document.querySelector(".temp");
-  convertTemp.innerHTML = Math.round(farTemp);
-}
-let convertFar = document.querySelector("#fahrenheit");
-convertFar.addEventListener("click", convert);
-
-function convert2(event) {
-  event.preventDefault();
-  let convertTemp2 = document.querySelector(".temp");
-  convertTemp2.innerHTML = Math.round(celsiusTemp);
-}
-let convertCel = document.querySelector("#celsius");
-convertCel.addEventListener("click", convert2);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
